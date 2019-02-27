@@ -2,16 +2,16 @@ package ru.job4j.condition;
 
 import org.junit.Test;
 
-import static org.hamcrest.number.IsCloseTo.closeTo;
+import org.junit.Test;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 public class PointTest {
-
     @Test
-    public void distancePointAtoB(){
-        Point a = new Point(4, 3);
-        Point b = new Point(8, 5);
-        double result = a.distanceTo(b);
-        assertThat(result, closeTo(4, 5));
+    public void whenZeroAndTenThenTen(){
+        Point point = new Point();
+        double result = point.distance(0, 0, 0, 10);
+        assertThat(result, is(10D));
     }
 }
+
