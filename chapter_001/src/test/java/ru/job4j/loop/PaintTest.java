@@ -1,0 +1,31 @@
+package ru.job4j.loop;
+
+import org.junit.Test;
+import java.util.StringJoiner;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Alexey Tsoy (alextsoy1984@mail.ru)
+ * @version 01
+ * @since 04.03.2019
+ */
+public class PaintTest {
+    @Test
+    public void whenPyramidHeight4() {
+        Paint paint = new Paint();
+        String rst = paint.pyramid(4);
+        System.out.println(rst);
+        assertThat(rst,
+                is(
+                        new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
+                                .add("   ^   ")
+                                .add("  ^^^  ")
+                                .add(" ^^^^^ ")
+                                .add("^^^^^^^")
+                                .toString()
+                )
+        );
+    }
+}
