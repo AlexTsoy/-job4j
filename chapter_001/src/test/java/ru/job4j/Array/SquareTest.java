@@ -14,6 +14,11 @@ import static org.junit.Assert.assertThat;
  * @since 06.03.2019
  */
 public class SquareTest {
+    /**
+     * Метод для тестирования с длиной массива 3
+     * @param bound аргумент массива
+     * int[] expect предпологаемый результат
+     */
     @Test
     public void whenBound3Then149() {
         int bound = 3;
