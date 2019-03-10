@@ -15,17 +15,22 @@ public class BubbleSort {
      * return результат
      */
     public int[] sort(int[] array){
-        boolean isSorting = false;
-        while (!isSorting){
-            isSorting = true;
-            for (int index = 0; index < array.length - 1; index++){
-                if (array[index] > array[index + 1]){
-                    isSorting = false;
-                    int number = array[index];
-                    array[index] = array[index + 1];
-                    array[index + 1] = number;
-                }
+        int i = 0;
+        int count = 0;
+        while(true){
+            if (array[i] > array[i + 1]) {
+                int q = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = q;
+                count = 0;
+            } else {
+                count++;
             }
+            i++;
+            if (i == array.length - 1) {
+                i = 0;
+            }
+            if (count == array.length - 1) break;
         }
         return array;
     }
