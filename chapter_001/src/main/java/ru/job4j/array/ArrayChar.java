@@ -27,7 +27,7 @@ public class ArrayChar {
             if (data[index] != value[index]){
                 result = false;
                 break;
-            } else result = true;
+            }
         }
         return result;
     }
