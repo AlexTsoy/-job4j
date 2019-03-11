@@ -23,8 +23,8 @@ public class ArrayChar {
         boolean result = true;
         char[] value = prefix.toCharArray();
         int min = Math.min(data.length, value.length);
-        for (int index = 0; index < min; index++){
-            if (data[index] != value[index]){
+        for (int index = 0; index < min; index++) {
+            if (data[index] != value[index]) {
                 result = false;
                 break;
             }

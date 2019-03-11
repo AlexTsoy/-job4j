@@ -14,10 +14,10 @@ public class BubbleSort {
      * @param array необходимый нам для сортировки массив.
      * return результат
      */
-    public int[] sort(int[] array){
+    public int[] sort(int[] array) {
         int i = 0;
         int count = 0;
-        while(true){
+        while (true) {
             if (array[i] > array[i + 1]) {
                 int q = array[i];
                 array[i] = array[i + 1];
@@ -30,7 +30,9 @@ public class BubbleSort {
             if (i == array.length - 1) {
                 i = 0;
             }
-            if (count == array.length - 1) break;
+            if (count == array.length - 1) {
+                break;
+            }
         }
         return array;
     }

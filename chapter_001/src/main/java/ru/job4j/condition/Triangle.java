@@ -14,7 +14,7 @@ public class Triangle {
         double c = point.distance(x1, y1, x3, y3);
         double p = period(a, b, c);
         if (this.exist(a, b, c)) {
-            rsl = Math.sqrt(p * (p - a)*(p - b)*(p - c));
+            rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
         return rsl;
     }

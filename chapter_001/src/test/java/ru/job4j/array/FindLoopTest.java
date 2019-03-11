@@ -1,7 +1,6 @@
-package ru.job4j.Array;
+package ru.job4j.array;
 
 import org.junit.Test;
-import ru.job4j.array.FindLoop;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -21,7 +20,7 @@ public class FindLoopTest {
      * expect предпологаемый результат
      */
     @Test
-    public void whenArrayHas40Then3(){
+    public void whenArrayHas40Then3() {
         FindLoop find = new FindLoop();
         int[] input = new int[] {1, 10, 5, 40};
         int value = 40;
@@ -36,7 +35,7 @@ public class FindLoopTest {
      * expect предпологаемый результат
      */
     @Test
-    public void whenArrayHasNoElement(){
+    public void whenArrayHasNoElement() {
         FindLoop find = new FindLoop();
         int[] input = new int[] {1, 10, 5, 40};
         int value = 9;
