@@ -17,10 +17,10 @@ public class Turn {
      * return результат
      */
     public int[] back(int[] array) {
-        for (int index = 0; index < array.length / 2; index++) {
-            int tmp = array[index];
-            array[index] = array[array.length - index - 1];
-            array[array.length - index - 1] = tmp;
+        for (int i = 0; i < array.length / 2; i++) {
+            int tmp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = tmp;
         }
         return array;
     }

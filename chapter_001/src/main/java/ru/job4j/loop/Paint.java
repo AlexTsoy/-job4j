@@ -29,8 +29,8 @@ public class Paint {
         StringBuilder screen = new StringBuilder();
         int width = height;
         for (int row = 0; row != height; row++) {
-            for (int column = 0; column != width; column++) {
-                if (row >= width - column - 1) {
+            for (int col = 0; col != width; col++) {
+                if (row >= width - col - 1) {
                     screen.append("^");
                 } else {
                     screen.append(" ");
@@ -45,8 +45,8 @@ public class Paint {
         StringBuilder screen = new StringBuilder();
         int widht = 2 * height - 1;
         for (int row = 0; row != height; row++) {
-            for (int column = 0; column != widht; column++) {
-                if (row >= height - column - 1 && row + height - 1 >= column) {
+            for (int col = 0; col != widht; col++) {
+                if (row >= height - col - 1 && row + height - 1 >= col) {
                     screen.append("^");
                 } else {
                     screen.append(" ");
