@@ -72,15 +72,13 @@ public class Logic {
         for (int row = 0; row < table.length; row++){
             int count1 = 0;
             int count2 = 0;
-            for (int cell = 0; cell < table.length; cell++) {
-                if(table[row][cell] == 1) {
-                    count2 ++ ;
-                    if (count2 == table.length) {
-                        result = true;
-                        break;
-                    }
+            count2 ++ ;
+                if (count2 == table.length) {
+                    result = true;
+                    break;
                 }
-                if(table[cell][row] == 1) {
+            for (int cell = 0; cell < table.length; cell++) {
+                if(table[cell][row] == 1 || table[row][cell] == 1) {
                     count1 ++ ;
                     if (count1 == table.length) {
                         result = true;
