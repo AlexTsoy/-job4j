@@ -7,6 +7,12 @@ import static org.junit.Assert.assertThat;
 
 public class ArraySortTest {
 
+    /**
+     * Метод для тестирования, объединяем 2 массива и сортируем ячейки по возрастанию
+     * @param input1 первый массив который нужно объеденить
+     * @param input2 второй массив который нужно объеденить
+     * expect предполагаемый результат
+     */
     @Test
     public void whenArraySortWithLeftElementsAndRightsElements() {
         ArraySort sort = new ArraySort();
