@@ -16,23 +16,31 @@ public class ArraySort {
      * @return megre отсортированный массив, объединяющий массивы left и right.
      */
     public int[] merge(int[] left, int[] right) {
+        if (left == null) {
+            return right;
+        }
+        if (right == null) {
+            return left;
+        }
         int[] merge = new int[left.length + right.length];
-        for (int i = 0; i < merge.length / 2; i++) {
-            if (left[i] > right[i]) {
-                merge[i + i] = right[i];
-                merge[i + i + 1] = left[i];
-            } else {
-                merge[i + i] = left[i];
-                merge[i + i + 1] = right[i];
+        int count = 0;
+        for (int i = 0; i < left.length; i++) {
+            merge [count] = left[i];
+            count++;
+        }
+        for (int j = 0; j < right.length; j++) {
+            merge [count] = right[j];
+            count++;
+        }
+        for(int i = merge.length-1 ; i > 0 ; i--){
+            for(int j = 0 ; j < i ; j++){
+                if( merge[j] > merge[j+1] ){
+                int tmp = merge[j];
+                merge[j] = merge[j+1];
+                merge[j+1] = tmp;
             }
         }
-        for (int i = 0; i < merge.length - 1; i++) {
-            int res = merge[i];
-            if (merge[i] > merge[i + 1]) {
-                merge[i] = merge[i + 1];
-                merge[i + 1] = res;
-            }
-        }
-        return merge;
+    }
+    return merge;
     }
 }
