@@ -23,24 +23,35 @@ public class ArraySort {
             return left;
         }
         int[] merge = new int[left.length + right.length];
-        int count = 0;
-        for (int i = 0; i < left.length; i++) {
-            merge [count] = left[i];
-            count++;
-        }
-        for (int j = 0; j < right.length; j++) {
-            merge [count] = right[j];
-            count++;
-        }
-        for(int i = merge.length-1 ; i > 0 ; i--){
-            for(int j = 0 ; j < i ; j++){
-                if( merge[j] > merge[j+1] ){
-                int tmp = merge[j];
-                merge[j] = merge[j+1];
-                merge[j+1] = tmp;
+        int i = 0, j = 0, p = 0;
+        while (i < left.length && j < right.length)
+        {
+            if (left[i] < right[j])
+            {
+                merge[p] = left[i];
+                i++;
             }
+            else
+            {
+                merge[p] = right[j];
+                j++;
+            }
+            p++;
         }
-    }
+
+        while (i < left.length)
+        {
+            merge[p] = left[i];
+            i++;
+            p++;
+        }
+
+        while (j < right.length)
+        {
+            merge[p] = right[j];
+            j++;
+            p++;
+        }
     return merge;
     }
 }
