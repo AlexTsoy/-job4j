@@ -74,7 +74,7 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenNewItemfindByiD() {
+    public void whenNewItemFindByiD() {
         Tracker tracker = new Tracker();
         Item item1 = new Item("test1","test1Description",123L);
         Item item2 = new Item("test1","test1Description",1234L);
