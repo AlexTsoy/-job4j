@@ -52,7 +52,7 @@ public class StartUI {
         String name = this.input.ask("Введите имя заявки :");
         String desc = this.input.ask("Введите описание заявки :");
         long created = System.currentTimeMillis();
-        Item item = new Item (name, desc, created);
+        Item item = new Item(name, desc, created);
         this.tracker.add(item);
         System.out.println("------------ Новая заявка с getId : " + item.getId() + "-----------");
     }
@@ -60,9 +60,12 @@ public class StartUI {
     private void findAllItem() {
         System.out.println("------------ Вывод на экран всех заявок --------------");
         Item[] item = tracker.findAll();
-        for (int i = 0; i < item.length; i++) {
-            if (item[i] != null) {
-                System.out.println("Заявка №" + (i + 1) + " " + item[i].getName() + " " + item[i].getDecs() + " " + item[i].getId());
+        if (item.length == 0) {
+            System.out.println("----------------Заявок не найдено!!!------------------");
+        } else {
+            for (int i = 0; i < item.length; i++) {
+                System.out.println("Заявка №" + (i + 1) + " " + item[i].getName()
+                                    + " " + item[i].getDecs() + " " + item[i].getId());
             }
         }
     }
@@ -95,11 +98,12 @@ public class StartUI {
     private void findId() {
         System.out.println("------------ Поиск заявки по ID--------------");
         String id = this.input.ask("Введите id заявки :");
-        if (tracker.findById(id) != null && id.equals(tracker.findById(id).getId())) {
-            System.out.println ("Найденная заявка " + tracker.findById(id).getName() +
-                    " " + tracker.findById(id).getDecs() + " " + tracker.findById(id).getId());
+        Item itemId = tracker.findById(id);
+        if (itemId != null && id.equals(itemId.getId())) {
+            System.out.println("Найденная заявка " + itemId.getName()
+                        + " " + itemId.getDecs() + " " + itemId.getId());
         } else {
-            System.out.println ("Заявка с таким ID не существует");
+            System.out.println("Заявка с таким ID не существует");
         }
     }
 
@@ -107,10 +111,10 @@ public class StartUI {
         System.out.println("------------ Поиск заявки по Name--------------");
         String name = this.input.ask("Введите name заявки :");
         Item[] item = tracker.findByName(name);
-        if (item.length !=0) {
+        if (item.length != 0) {
             for (Item item1: item) {
-                System.out.println("Заявка с запрашиваем Name найдена " +
-                        item1.getName() + " " + item1.getDecs() + " " + item1.getId());
+                System.out.println("Заявка с запрашиваем Name найдена "
+                        + item1.getName() + " " + item1.getDecs() + " " + item1.getId());
             }
         } else {
             System.out.println("Заявка с запрашиваем Name  не найдена");

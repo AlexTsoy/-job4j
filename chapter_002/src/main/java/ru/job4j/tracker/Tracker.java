@@ -56,6 +56,7 @@ public class Tracker {
 			if (this.items != null && this.items[index].getId().equals(id)) {
 				System.arraycopy(this.items, index + 1, this.items, index, this.position - index - 1);
 				this.items[this.position - 1] = null;
+				this.position--;
 				resDelete = true;
 				break;
 			}
