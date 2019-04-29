@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.*;
+
 public class StartUI {
     private static final String ADD = "0";
     private static final String SHOW_ALL = "1";
@@ -64,8 +66,7 @@ public class StartUI {
             System.out.println("----------------Заявок не найдено!!!------------------");
         } else {
             for (int i = 0; i < item.length; i++) {
-                System.out.println("Заявка №" + (i + 1) + " " + item[i].getName()
-                                    + " " + item[i].getDecs() + " " + item[i].getId());
+                System.out.printf("Заявка №%d name:%s desc:%s ID:%s%n", i + 1, item[i].getName(), item[i].getDecs(), item[i].getId());
             }
         }
     }
@@ -100,8 +101,7 @@ public class StartUI {
         String id = this.input.ask("Введите id заявки :");
         Item itemId = tracker.findById(id);
         if (itemId != null && id.equals(itemId.getId())) {
-            System.out.println("Найденная заявка " + itemId.getName()
-                        + " " + itemId.getDecs() + " " + itemId.getId());
+            System.out.printf("Найденная заявка name:%s desc:%s ID:%s%n", itemId.getName(), itemId.getDecs(), itemId.getId());
         } else {
             System.out.println("Заявка с таким ID не существует");
         }
@@ -113,8 +113,7 @@ public class StartUI {
         Item[] item = tracker.findByName(name);
         if (item.length != 0) {
             for (Item item1: item) {
-                System.out.println("Заявка с запрашиваем Name найдена "
-                        + item1.getName() + " " + item1.getDecs() + " " + item1.getId());
+                System.out.printf("Заявка с запрашиваем Name найдена name:%s desc:%s ID:%s%n", item1.getName(), item1.getDecs(), item1.getId());
             }
         } else {
             System.out.println("Заявка с запрашиваем Name  не найдена");
