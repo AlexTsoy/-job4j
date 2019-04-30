@@ -24,7 +24,7 @@ public class ArraySortTest {
     }
 
     @Test
-    public void ArraySortWhenLeftElementsLongRightsElements() {
+    public void whenArraySortLeftElementsLongRightsElements() {
         ArraySort sort = new ArraySort();
         int[] input1 = new int[] {1, 4, 5, 8};
         int[] input2 = new int[] {2, 6};
@@ -34,7 +34,7 @@ public class ArraySortTest {
     }
 
     @Test
-    public void ArraySortWhenRightsElementsLongLeftElements() {
+    public void whenArraySortRightsElementsLongLeftElements() {
         ArraySort sort = new ArraySort();
         int[] input1 = new int[] {1, 3};
         int[] input2 = new int[] {2, 4, 5, 6, 8};
@@ -44,7 +44,7 @@ public class ArraySortTest {
     }
 
     @Test
-    public void ArraySortWhenRightsElementsIsNull() {
+    public void whenArraySortRightsElementsIsNull() {
         ArraySort sort = new ArraySort();
         int[] input1 = new int[] {2, 4, 5, 6, 8};
         int[] input2 = null;
@@ -54,7 +54,7 @@ public class ArraySortTest {
     }
 
     @Test
-    public void ArraySortWhenLeftElementsIsNull() {
+    public void whenArraySortLeftElementsIsNull() {
         ArraySort sort = new ArraySort();
         int[] input1 = null;
         int[] input2 = new int[] {2, 4, 5, 6, 8};

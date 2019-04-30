@@ -24,30 +24,24 @@ public class ArraySort {
         }
         int[] merge = new int[left.length + right.length];
         int i = 0, j = 0, p = 0;
-        while (i < left.length && j < right.length)
-        {
-            if (left[i] < right[j])
-            {
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
                 merge[p] = left[i];
                 i++;
-            }
-            else
-            {
+            } else {
                 merge[p] = right[j];
                 j++;
             }
             p++;
         }
 
-        while (i < left.length)
-        {
+        while (i < left.length) {
             merge[p] = left[i];
             i++;
             p++;
         }
 
-        while (j < right.length)
-        {
+        while (j < right.length) {
             merge[p] = right[j];
             j++;
             p++;
